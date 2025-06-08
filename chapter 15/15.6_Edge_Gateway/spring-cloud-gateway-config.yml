@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
+      routes:
+        - id: catalog
+          uri: lb://catalog-service
+          predicates:
+            - Path=/api/catalog/**
+        - id: cart
+          uri: lb://cart-service
+          predicates:
+            - Path=/api/cart/**
+        - id: order
+          uri: lb://order-service
+          predicates:
+            - Path=/api/orders/**

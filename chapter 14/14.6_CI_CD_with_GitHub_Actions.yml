@@ -1,0 +1,26 @@
+
+name: build-test-deploy
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres: {image: postgres:16, ports: ['5432:5432'], env: {POSTGRES_PASSWORD: secret}}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: {distribution: temurin, java-version: 17}
+      - run: mvn -B verify
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v4
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./gradlew jib --image ghcr.io/${{github.repository}}:${{github.sha}}
+      - uses: azure/setup-kubectl@v3
+      - run: |
+          kubectl set image deploy/app app=ghcr.io/${{github.repository}}:${{github.sha}}
+    

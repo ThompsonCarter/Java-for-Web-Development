@@ -1,0 +1,11 @@
+catalog:
+  image: shopsphere/catalog:1.0.0
+  resources:
+    limits: { cpu: "200m", memory: "256Mi" }
+cart:
+  redis: { enabled: true, persistence: false }
+gateway:
+  ingress:
+    hosts:
+      - shop.local
+    tls: false
