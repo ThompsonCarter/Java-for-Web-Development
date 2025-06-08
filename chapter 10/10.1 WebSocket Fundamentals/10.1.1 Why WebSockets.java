@@ -1,0 +1,2 @@
+Imagine you’re in a group chat. With HTTP polling, your browser asks the server every few seconds, “Any new messages?” The server replies “Nope” most of the time—wasted network trips and delayed conversations. WebSockets keep the connection open, letting the server “push” new messages the moment they arrive.
+Analogy: WebSockets are like a phone call: once connected, you speak and listen instantly, without repeatedly dialing. HTTP polling is like repeatedly calling someone to check if they have news.

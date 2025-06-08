@@ -1,0 +1,4 @@
+
+docker tag taskmanager:latest your-dockerhub-username/taskmanager:1.0.0
+docker push your-dockerhub-username/taskmanager:1.0.0
+    

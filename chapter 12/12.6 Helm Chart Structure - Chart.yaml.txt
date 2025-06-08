@@ -1,0 +1,6 @@
+
+apiVersion: v2
+name: taskmanager
+version: 0.1.0
+description: Helm chart for Task Manager
+    

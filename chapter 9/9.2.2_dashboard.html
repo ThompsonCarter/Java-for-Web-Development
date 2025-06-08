@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+<body>
+  <h1>Welcome, <span th:text="${user.name}">User</span>!</h1>
+  <ul>
+    <li th:each="task : ${tasks}" th:text="${task.description}">Task</li>
+  </ul>
+</body>
+</html>

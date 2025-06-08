@@ -1,0 +1,10 @@
+
+# Static Analysis: add a lint stage before build to catch errors early.
+
+# Security: run as non-root user in final image:
+FROM eclipse-temurin:17-jre-jammy
+RUN adduser --system --group appuser
+USER appuser
+
+# Layer Caching: copy pom.xml first, run mvn dependency:go-offline so dependencies cache, then copy src.
+    
