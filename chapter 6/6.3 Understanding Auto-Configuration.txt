@@ -1,0 +1,5 @@
+Spring Boot auto-configures sensible defaults for web servers, data sources, security, etc.
+It examines your classpath and beans to provide appropriate configurations.
+- Tomcat server for Spring MVC
+- H2 database for an in-memory DataSource
+- EntityManagerFactory if JPA is present

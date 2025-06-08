@@ -1,0 +1,14 @@
+Run:
+mvn spring-boot:run
+
+List Tasks (initially empty):
+curl http://localhost:8080/api/tasks
+
+Create Task:
+curl -X POST http://localhost:8080/api/tasks -H "Content-Type: application/json" -d '{"description":"Write chapter","completed":false}'
+
+Update Task:
+curl -X PUT http://localhost:8080/api/tasks/1 -H "Content-Type: application/json" -d '{"description":"Write chapter","completed":true}'
+
+Delete Task:
+curl -X DELETE http://localhost:8080/api/tasks/1

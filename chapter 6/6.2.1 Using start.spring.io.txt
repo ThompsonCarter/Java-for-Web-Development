@@ -1,0 +1,10 @@
+Project: Maven (or Gradle—choice is yours).
+Language: Java.
+Spring Boot: choose the latest stable (e.g., 3.x).
+Group: com.example
+Artifact: taskmanager
+Dependencies:
+Spring Web (for REST endpoints)
+Spring Data JPA (for database access)
+H2 Database (in-memory database for now)
+Click Generate, unzip the download, and open in your IDE.

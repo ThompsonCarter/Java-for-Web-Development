@@ -1,0 +1,9 @@
+public interface Notifier {
+  void send(String message);
+}
+
+public class EmailNotifier implements Notifier {
+  public void send(String message) {
+    System.out.println("Email: " + message);
+  }
+}

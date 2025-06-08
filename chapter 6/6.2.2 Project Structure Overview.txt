@@ -1,0 +1,8 @@
+taskmanager/
+├─ src/
+│  ├─ main/
+│  │  ├─ java/com/example/taskmanager/
+│  │  │  └─ TaskmanagerApplication.java
+│  │  └─ resources/
+│  │     └─ application.properties
+├─ pom.xml
